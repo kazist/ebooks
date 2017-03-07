@@ -1,0 +1,36 @@
+
+{{ set_assets('applications/Ebooks/Addons/Ebooks/assets/css/style.css') }}
+
+<div class="block-ebooks">
+
+    {% if ebooks|length > 0 %}
+        {% for ebook in ebooks %}
+            <div class="block-ebook">
+
+                {% set ebook_url =  generate_url('ebooks.ebooks.detail', {'id': ebook.id}) %}
+                {% set category_url =  generate_url('ebooks.categories.detail', {'id': ebook.category_id}) %}
+                {% set download_url = generate_url('ebooks.ebooks.download', {'id': ebook.id}) %}
+
+                <a href="{{ ebook_url }}" title="{{ ebook.title }}">
+                    <img src="{{ resized_image(ebook.image_file,90,90) }}" alt="{{ ebook.title }}" title="{{ ebook.title }}" align="left" width="90px"/>
+                </a>
+
+                <h4>
+                    <a href="{{ ebook_url }}">
+                        {{ ebook.title|capitalize  }}
+                    </a>
+                </h4>
+
+                {{ ebook.description|striptags|truncate(70)|raw }}
+                <br>
+
+                <a class="btn btn-success btn-xs btn-flat" href="{{ download_url }}" title="Download {{ ebook.file_title }}">Download</a>
+                <a class="btn btn-primary btn-xs btn-flat" href="{{ ebook_url }}" title="View {{ ebook.file_title }}">Preview</a>
+                <div class="clearfix"></div>
+
+            </div>
+        {% endfor %}
+    {% else %}
+        No Latest Ebooks
+    {% endif %}
+</div>

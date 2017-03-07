@@ -1,0 +1,19 @@
+[
+    {
+        "title": "Ebooks List",
+        "show_title": "1",
+        "unique_name": "ebooks.addons.ebooks",
+        "icon": "fa-user",
+        "homepage": "0",
+        "allpages": "0",
+        "extensionpages": "1",
+        "viewside": "frontend",
+        "explanation": "",
+        "description": "",
+        "suffix_content": "",
+        "prefix_content": "",
+        "main_content": "",
+        "positions": ["sidebar"]
+
+    }
+]

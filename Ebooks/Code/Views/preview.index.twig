@@ -1,0 +1,23 @@
+<link rel="stylesheet" type="text/css" href="{{ web_root }}assets/css/bootstrap.css"/>
+<link rel="stylesheet" type="text/css" href="{{ web_root }}assets/css/font-awesome.css"/>
+
+{% set ebook_url =  generate_url('ebooks.ebooks.detail', {'id': item.id}) %}
+
+<div class="col-md-12">
+
+    <div class="ebook-preview-link">
+        <a class="btn btn-success btn-sm btn-flat" href="{{ ebook_url }}" title="Download Ebook"> Back To Ebook</a>
+        <a class="btn btn-danger btn-sm btn-flat pull-right" href="{{ ebook_url }}" title="Download Ebook"> 
+            <i class="fa fa-times"></i>
+            Close
+        </a>
+    </div>
+
+    <iframe src="{{ web_root }}viewerjs/index.html#{{ web_root }}{{ item.file_file }}" style="width: 100%; height: 500px;"></iframe>
+</div>
+
+<style>
+    .ebook-preview-link{
+        margin:5px 0;
+    }
+</style>

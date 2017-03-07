@@ -1,0 +1,63 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 29, 2016, 2:05:40 PM
+    Author     : sbc
+*/
+
+.carousel {
+    margin-bottom: 0;
+}
+/* Reposition the controls slightly */
+.carousel-control {
+    left: -12px;
+
+}
+.carousel-control.right {
+    right: -12px;
+}
+/* Changes the position of the indicators */
+.carousel-indicators {
+    right: 50%;
+    top: auto;
+    bottom: 0px;
+    margin-right: -19px;
+}
+/* Changes the colour of the indicators */
+.carousel-indicators li {
+    background: #c0c0c0;
+}
+.carousel-indicators .active {
+    background: #333333;
+}
+
+.carousel-inner .row-fluid-item{
+    width:50%;
+    float: left;
+}
+
+.free_ebooks{
+    background: white;
+    border: 1px solid #ddd;
+}
+
+.free_ebooks h4{
+    margin-top:0;
+    margin-bottom:0;
+    height:50px;
+}
+
+.free_ebooks p{
+    line-height: 20px;
+}
+
+.free_ebooks .component-ebook{
+    overflow:hidden;
+}
+
+.free_ebooks .component-ebook label{
+    margin-bottom:20px;
+}

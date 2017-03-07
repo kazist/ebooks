@@ -1,0 +1,66 @@
+Ebooks\Limits\Code\Tables\Limits:
+  table: ebooks_limits
+  type: entity
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    group_id:
+      name: group_id
+      type: integer
+      length: 11
+      nullable: false
+    book_limit:
+      name: book_limit
+      type: integer
+      length: 11
+      nullable: false
+    frequency:
+      name: frequency
+      type: string
+      length: 255
+      nullable: false
+    published:
+      name: published
+      type: integer
+      length: 11
+      nullable: false
+    free_ebook:
+      name: free_ebook
+      type: integer
+      length: 11
+      nullable: false
+    book_per_interval:
+      name: book_per_interval
+      type: integer
+      length: 11
+      nullable: false
+    created_by:
+      name: created_by
+      type: integer
+      length: 11
+      nullable: false
+    date_created:
+      name: date_created
+      type: datetime
+      nullable: false
+    modified_by:
+      name: modified_by
+      type: integer
+      length: 11
+      nullable: false
+    date_modified:
+      name: date_modified
+      type: datetime
+      nullable: false
+  indexes:
+    group_id_index:
+      columns: [group_id]
+  lifecycleCallbacks:
+    prePersist:
+      - onPrePersist
+      - onPrePersistCallbacks
+    preUpdate:
+      - onPreUpdate
+      - onPreUpdateCallbacks

@@ -1,0 +1,10 @@
+{
+    "name": "ebooks",
+    "title": "Ebooks Listing",
+    "explanation": "Ebooks Listing",
+    "description": "Ebooks Listing",
+    "version": 1,
+    "icon": "assets\/ebooks\/addons\/ebooks\/icon.png",
+    "extension": "addon",
+    "path": "ebooks\/addons\/ebooks\/"
+}

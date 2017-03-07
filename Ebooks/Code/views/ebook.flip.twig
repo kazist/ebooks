@@ -1,0 +1,52 @@
+{# empty Twig template #}
+
+{{ set_assets('applications/Ebooks/assets/css/magazine_flip.css') }}
+{{ set_assets('assets/css/flipbook.css') }}
+{{ set_assets('applications/Ebooks/assets/js/magazine_flip.js') }}
+{{ set_assets('assets/js/turnjs/turn.js') }}
+{{ set_assets('assets/js/turnjs/zoom.min.js') }}
+{{ set_assets('assets/js/flipbook.js') }}
+
+<div id="flipbook-wrapper">
+    <div id="flipbook-viewport">
+        <div id="flipbook">
+            {% if flip_pages|length > 0 %}
+                {% for flip_page in flip_pages %}
+                    <div>
+                        <img src="{{ flip_page }}" alt="" />
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="flipbook-navigation">
+        <div class="text-center">
+
+            <small>Zoom <b>1.0</b> </small>
+
+            <div class="btn-group" role="group" aria-label="...">
+                <a class="btn btn-warning btn-xs flipbook-zoom-in">
+                    <i class="fa fa-search-plus fa-2x"></i> 
+                    <small>In</small>
+                </a>
+                <a class="btn btn-warning btn-xs flipbook-zoom-out">
+                    <i class="fa fa-search-minus fa-2x"></i> Out
+                </a>
+            </div>
+
+            <div class="btn-group" role="group" aria-label="...">
+                <a class="btn btn-warning btn-xs flipbook-previous">
+                    <i class="fa fa-arrow-circle-left fa-2x"></i> Pre
+                </a>
+                <a class="btn btn-default btn-sm flipbook-counter">
+                    Page 1 of 10
+                </a>
+                <a class="btn btn-warning btn-xs flipbook-next">
+                    <i class="fa fa-arrow-circle-right fa-2x"></i> Next
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+

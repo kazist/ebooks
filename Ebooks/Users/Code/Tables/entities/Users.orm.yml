@@ -1,0 +1,65 @@
+Ebooks\Ebooks\Users\Code\Tables\Users:
+  table: ebooks_ebooks_users
+  type: entity
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    limit_id:
+      name: limit_id
+      type: integer
+      length: 11
+      nullable: true
+    ebook_id:
+      name: ebook_id
+      type: integer
+      length: 11
+      nullable: false
+    user_id:
+      name: user_id
+      type: integer
+      length: 11
+      nullable: false
+    frequency:
+      name: frequency
+      type: string
+      length: 255
+      nullable: true
+    is_active:
+      name: is_active
+      type: integer
+      length: 11
+      nullable: true
+    created_by:
+      name: created_by
+      type: integer
+      length: 11
+      nullable: false
+    date_created:
+      name: date_created
+      type: datetime
+      nullable: false
+    modified_by:
+      name: modified_by
+      type: integer
+      length: 11
+      nullable: false
+    date_modified:
+      name: date_modified
+      type: datetime
+      nullable: false
+  indexes:
+    limit_id_index:
+      columns: [limit_id]
+    ebook_id_index:
+      columns: [ebook_id]
+    user_id_index:
+      columns: [user_id]
+  lifecycleCallbacks:
+    prePersist:
+      - onPrePersist
+      - onPrePersistCallbacks
+    preUpdate:
+      - onPreUpdate
+      - onPreUpdateCallbacks

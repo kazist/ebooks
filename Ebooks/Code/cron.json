@@ -1,0 +1,34 @@
+
+
+[{
+        "tracking_id": "1",
+        "controller": "Ebooks\\Ebooks\\Code\\Controllers\\EbooksController",
+        "function": "cronarchiveuserebookAction",
+        "unique_name": "ebooks.ebooks.cronarchiveuserebook",
+        "minute": "0",
+        "hour": "*",
+        "day_of_month": "*",
+        "month": "*",
+        "day_of_week": "*",
+        "year": "*",
+        "next_run_time": "",
+        "published": 1
+    }, {
+        "tracking_id": "2",
+        "controller": "Ebooks\\Ebooks\\Code\\Controllers\\EbooksController",
+        "function": "cronadduserebookAction",
+        "unique_name": "ebooks.ebooks.cronadduserebook",
+        "minute": "0",
+        "hour": "*",
+        "day_of_month": "*",
+        "month": "*",
+        "day_of_week": "*",
+        "year": "*",
+        "next_run_time": "",
+        "published": 1
+    }]
+
+
+
+
+

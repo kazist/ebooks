@@ -1,0 +1,213 @@
+{
+    "frontend": [{
+            "title": "Ebook List",
+            "description": "Management of Ebooks.",
+            "controller": "Ebooks\\Ebooks\\Code\\Controllers\\EbooksController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "ebooks.ebooks",
+            "route": "ebooks/ebooks",
+            "seo_url": "ebooks",
+            "arguments": "",
+            "keywords": "ebook, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_view", "can_viewown"]
+            }
+
+        }, {
+            "title": "Ebook Detail: {{ item.name }}",
+            "description": "Ebook Detail: {{ item.name }}",
+            "controller": "Ebooks\\Ebooks\\Code\\Controllers\\EbooksController::detailAction",
+            "unique_name": "ebooks.ebooks.detail",
+            "route": "ebooks/ebooks/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "seo_url": "ebooks/{slug}",
+            "arguments": {
+                "id": null
+            },
+            "seo_arguments": {
+                "slug": null
+            },
+            "keywords": "ebook, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Ebook Download",
+            "description": "Ebook Download",
+            "controller": "Ebooks\\Ebooks\\Code\\Controllers\\EbooksController::downloadAction",
+            "unique_name": "ebooks.ebooks.download",
+            "route": "ebooks/ebooks/download/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "ebook, download, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "cron archive user ebook",
+            "description": "cron archive user ebook",
+            "controller": "Ebooks\\Ebooks\\Code\\Controllers\\EbooksController::cronarchiveuserebookAction",
+            "unique_name": "ebooks.ebooks.cronarchiveuserebook",
+            "route": "ebooks/ebooks/cronarchiveuserebook",
+            "permissions": "can_view, can_viewown",
+            "arguments": {},
+            "keywords": "ebook, cronarchiveuserebook",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 0
+        }, {
+            "title": "cron add user ebook",
+            "description": "cron add user ebook",
+            "controller": "Ebooks\\Ebooks\\Code\\Controllers\\EbooksController::cronadduserebookAction",
+            "unique_name": "ebooks.ebooks.cronadduserebook",
+            "route": "ebooks/ebooks/cronadduserebook",
+            "permissions": "can_view, can_viewown",
+            "arguments": {},
+            "keywords": "ebook, cronadduserebook",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 0
+        }]
+    ,
+    "backend": [{
+            "title": "General Tasks",
+            "description": "General Tasks.",
+            "controller": "Ebooks\\Ebooks\\Code\\Controllers\\Admin\\EbooksController::taskAction",
+            "unique_name": "admin.ebooks.ebooks.task",
+            "route": "admin/ebooks/ebooks/task",
+            "permissions": "can_write",
+            "arguments": "",
+            "keywords": "ebooks, task",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_write"],
+                "ADMIN": ["can_write"]
+            }
+        }, {
+            "title": "Ebook List",
+            "description": "Management of Ebooks.",
+            "controller": "Ebooks\\Ebooks\\Code\\Controllers\\Admin\\EbooksController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "admin.ebooks.ebooks",
+            "route": "admin/ebooks/ebooks",
+            "arguments": "",
+            "keywords": "ebook, list",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Add Ebook ",
+            "description": "Add Ebook .",
+            "controller": "Ebooks\\Ebooks\\Code\\Controllers\\Admin\\EbooksController::addAction",
+            "unique_name": "admin.ebooks.ebooks.add",
+            "route": "admin/ebooks/ebooks/add",
+            "permissions": "can_add",
+            "arguments": {},
+            "keywords": "ebook, add",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add"],
+                "ADMIN": ["can_add"]
+            }
+        }, {
+            "title": "Edit Ebook {{ item.name }}",
+            "description": "Edit Ebook {{ item.name }}.",
+            "controller": "Ebooks\\Ebooks\\Code\\Controllers\\Admin\\EbooksController::editAction",
+            "unique_name": "admin.ebooks.ebooks.edit",
+            "route": "admin/ebooks/ebooks/edit/{id}",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "ebook, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }, {
+            "title": "Ebook Detail: {{ item.name }}",
+            "description": "Ebook Detail: {{ item.name }}",
+            "controller": "Ebooks\\Ebooks\\Code\\Controllers\\Admin\\EbooksController::detailAction",
+            "unique_name": "admin.ebooks.ebooks.detail",
+            "route": "admin/ebooks/ebooks/detail/{id}",
+            "permissions": "can_view, can_viewown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "ebook, list, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"]
+            }
+        }, {
+            "title": "Ebook Delete: {{ item.name }}",
+            "description": "Ebook Delete: {{ item.name }}",
+            "controller": "Ebooks\\Ebooks\\Code\\Controllers\\Admin\\EbooksController::deleteAction",
+            "unique_name": "admin.ebooks.ebooks.delete",
+            "route": "admin/ebooks/ebooks/delete/{id}",
+            "permissions": "can_delete, can_deleteown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "ebook, delete, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_delete", "can_deleteown"],
+                "ADMIN": ["can_delete", "can_deleteown"]
+            }
+        }, {
+            "title": "Ebook Save: {{ item.name }}",
+            "description": "Ebook Save: {{ item.name }}",
+            "controller": "Ebooks\\Ebooks\\Code\\Controllers\\Admin\\EbooksController::saveAction",
+            "unique_name": "admin.ebooks.ebooks.save",
+            "route": "admin/ebooks/ebooks/save",
+            "permissions": "can_add, can_write, can_writeown",
+            "arguments": {
+                "id": null
+            },
+            "keywords": "ebook, save, {{ item.name }}",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 1,
+            "roles": {
+                "SUPER_ADMIN": ["can_add", "can_write", "can_writeown"],
+                "ADMIN": ["can_add", "can_write", "can_writeown"]
+            }
+        }]
+} 	

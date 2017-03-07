@@ -1,0 +1,61 @@
+{# empty Twig template #}
+
+{{ set_assets('applications/Ebook/Components/assets/css/ebook.css') }}
+
+{% set item_url = friendly_url('app=ebook&com=ebook&subset=ebook&view=detail&id='~ items.0.id)  %}
+
+<h1 class="component-header"> Ebooks</h1>
+
+
+<form id="{{ main_form_id }}" action="{{ friendly_url('app=ebook&com=ebook&subset=ebook') }}" method="post" >
+
+
+
+    <div class="component-ebooks">
+
+        {% if items|length > 0 %}
+
+            {% for key,ebook in items%}
+
+                {% set download_url = friendly_url('app=ebook&com=ebook&subset=ebook&view=detail&task=download&controller=EbookController&id=' ~ ebook.id) %}
+                {% set ebook_url =  friendly_url('app=ebook&com=ebook&subset=ebook&view=detail&id=' ~ ebook.id) %}
+                {% set category_url =  friendly_url('app=ebook&com=category&subset=category&view=detail&id=' ~ ebook.category_id) %}
+
+                <div class="col-sm-3">
+                    <div class="component-ebook">
+
+                        <h4>
+                            <a href="{{ ebook_url }}" title= "{{ ebook.title }}">
+                                {{ ebook.title }}
+                            </a>
+                        </h4>
+
+                        <div class="covar"><center><img src="{{ resized_image(ebook.image_file, 80, null, 'fit') }}" alt=""></center></div>
+                        <a class="btn btn-success btn-xs btn-flat" href="{{ download_url }}" title="Download {{ ebook.file_title }}">
+                            <i class="fa fa-arrow-circle-o-down"></i>
+                            Download
+                        </a>
+                        <a class="btn btn-primary btn-xs btn-flat" href="{{ ebook_url }}" title="View {{ ebook.file_title }}">
+                            <i class="fa fa-edit"></i>
+                            Preview
+                        </a>
+                    </div>
+                </div>
+
+
+            {% endfor %}
+
+        {% else %}
+            No Products
+        {% endif %}
+
+    </div>
+
+    <div class="clr"></div>
+
+    {% include "items.pagination.twig"%}
+
+    {{ forms.input('_token' ) }} 
+
+</form>
+

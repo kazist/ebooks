@@ -1,0 +1,22 @@
+{
+    "EbooksCategories": {
+        "namespace": "Ebooks\\Categories",
+        "controller": "CategoriesController"
+    },
+    "EbooksEbooks": {
+        "namespace": "Ebooks\\Ebooks",
+        "controller": "EbooksController"
+    },
+    "EbooksEbooksUsers": {
+        "namespace": "Ebooks\\Ebooks\\Users",
+        "controller": "UsersController"
+    },
+    "EbooksLimits": {
+        "namespace": "Ebooks\\Limits",
+        "controller": "LimitsController"
+    },
+    "EbooksEbooksFreebooks": {
+        "namespace": "Ebooks\\Ebooks\\Freebooks",
+        "controller": "FreebooksController"
+    }
+}

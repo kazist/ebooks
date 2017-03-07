@@ -1,0 +1,10 @@
+{
+    "title": "Ebooks",
+    "alias": "ebooks",
+    "table_name": "ebooks_ebooks",
+    "title_field": "title",
+    "content_field": "description",
+    "image_field": "image",
+    "published": "1",
+    "is_processed": "0"
+}

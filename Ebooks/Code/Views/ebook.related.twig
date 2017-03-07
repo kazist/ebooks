@@ -1,0 +1,46 @@
+{# empty Twig template #}
+
+{% set params = { 'ebook_id': ebook_id } %}
+
+{% set related_ebooks = callFunction( "Ebooks.Ebooks.Code.Models.EbooksModel", 'getRelatedEbook', params ) %}
+
+<div class="component-ebooks">
+
+    {% if related_ebooks|length > 0 %}
+        {% for key,ebook in related_ebooks %}
+
+            {% set download_url = generate_url('ebooks.ebooks.download', {'id': ebook.id}) %}
+            {% set ebook_url =  generate_url('ebooks.ebooks.detail', {'id': ebook.id}) %}
+            {% set category_url =  generate_url('ebooks.categories.detail', {'id': ebook.category_id}) %}
+
+            <div class="col-sm-3">
+                <div class="component-ebook">
+                    <h4>
+                        <a href="{{ ebook_url }}">
+                            {{ ebook.title }}
+                        </a>
+                    </h4>
+
+                    <a href="{{ ebook_url }}" title="{{ ebook.title }}">
+                        <img src="{{ resized_image(ebook.image_file,300,300) }}" title="{{ ebook.title }}" alt="{{ ebook.title }}"/>
+                    </a>
+                    <br>
+
+                    <b>Category:</b>
+                    <a href="{{ category_url }}" title="{{ ebook.category_id_join }}">
+                        {{ ebook.category_id_join }}
+                    </a>
+                    <br>
+
+                    <a class="btn btn-success btn-xs btn-flat" href="{{ download_url }}" title="Download {{ ebook.file_title }}">Download</a>
+                    <a class="btn btn-primary btn-xs btn-flat" href="{{ ebook_url }}" title="View {{ ebook.file_title }}">Preview</a>
+
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        {% endfor %}
+
+    {% else %}
+        No Related Magazines
+    {% endif %}
+</div>

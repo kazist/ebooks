@@ -1,0 +1,27 @@
+{# empty Twig template #}
+{% import "form.macro.twig" as forms %}
+
+{{ set_assets('applications/Ebook/Components/assets/css/ebook.css') }}
+{{ set_assets('applications/Ebook/Components/assets/js/ebook.js') }}
+
+<h1 class="component-header">{{ item.title }}</h1>
+
+<div class="ebook-posted-date">
+    <i class="fa fa-clock-o"></i> Posted:  {{ item.date_created|date('d M Y H:i') }} &nbsp;&nbsp;
+</div>
+
+{% if is_flip_pages %}
+    {% include "ebook.flip.twig" ignore missing %}
+{% else %}
+    <div>
+        <iframe src="{{ uri.base.full }}viewerjs/index.html#{{ uri.base.full }}{{ item.file_file }}" style="width: 100%; height: 500px;"></iframe>
+    </div>
+{% endif %}
+
+<div> 
+    <div class="clr"></div>
+    <br>
+    <br>
+    <div class="well well-sm">Related Ebook</div>
+    {% include "ebook.related.twig" ignore missing with {'ebook_id': item.id}  %}
+</div> 

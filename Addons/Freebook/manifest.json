@@ -1,0 +1,10 @@
+{
+    "name": "freebook",
+    "title": "Freebook Listing",
+    "explanation": "Freebook Listing",
+    "description": "Freebook Listing",
+    "version": 1,
+    "icon": "assets\/ebooks\/addons\/freebook\/icon.png",
+    "extension": "addon",
+    "path": "ebooks\/addons\/freebook\/"
+}

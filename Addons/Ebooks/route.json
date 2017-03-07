@@ -1,0 +1,22 @@
+{
+    "frontend": [{
+            "title": "Ebooks List",
+            "description": "Management of Ebooks.",
+            "controller": "Ebooks\\Addons\\Ebooks\\Controllers\\EbooksController::indexAction",
+            "permissions": "can_view, can_viewown",
+            "unique_name": "ebooks.addons.ebooks",
+            "route": "ebooks/addons/ebooks",
+            "arguments": "",
+            "keywords": "latest, ebooks, list, addons",
+            "priority": "0.5",
+            "changefreq": "weekly",
+            "login_required": 0,
+            "roles": {
+                "SUPER_ADMIN": ["can_view", "can_viewown"],
+                "ADMIN": ["can_view", "can_viewown"],
+                "MODERATOR": ["can_view", "can_viewown"],
+                "USER": ["can_view", "can_viewown"]
+            }
+        }]
+
+} 	

@@ -1,0 +1,10 @@
+
+{
+    "name": "ebooks",
+    "title": "Ebooks",
+    "icon": "ebooks\/ebooks\/icon.png",
+    "extension": "component",
+    "path": "ebooks\/",
+    "description": "Ebooks List",
+    "version": 1
+}

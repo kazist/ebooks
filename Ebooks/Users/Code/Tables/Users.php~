@@ -1,0 +1,260 @@
+<?php
+
+namespace Ebooks\Ebooks\Users\Code\Tables;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Users
+ *
+ * @ORM\Table(name="ebooks_ebooks_users", indexes={@ORM\Index(name="limit_id_index", columns={"limit_id"}), @ORM\Index(name="ebook_id_index", columns={"ebook_id"}), @ORM\Index(name="user_id_index", columns={"user_id"})})
+ * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
+ */
+class Users extends \Kazist\Table\BaseTable
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    protected $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="limit_id", type="integer", length=11, nullable=true)
+     */
+    protected $limit_id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="ebook_id", type="integer", length=11, nullable=false)
+     */
+    protected $ebook_id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="user_id", type="integer", length=11, nullable=false)
+     */
+    protected $user_id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="frequency", type="string", length=255, nullable=true)
+     */
+    protected $frequency;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="is_active", type="integer", length=11, nullable=true)
+     */
+    protected $is_active;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="created_by", type="integer", length=11, nullable=false)
+     */
+    protected $created_by;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_created", type="datetime", nullable=false)
+     */
+    protected $date_created;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="modified_by", type="integer", length=11, nullable=false)
+     */
+    protected $modified_by;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_modified", type="datetime", nullable=false)
+     */
+    protected $date_modified;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set limit_id
+     *
+     * @param integer $limitId
+     * @return Users
+     */
+    public function setLimitId($limitId)
+    {
+        $this->limit_id = $limitId;
+
+        return $this;
+    }
+
+    /**
+     * Get limit_id
+     *
+     * @return integer 
+     */
+    public function getLimitId()
+    {
+        return $this->limit_id;
+    }
+
+    /**
+     * Set ebook_id
+     *
+     * @param integer $ebookId
+     * @return Users
+     */
+    public function setEbookId($ebookId)
+    {
+        $this->ebook_id = $ebookId;
+
+        return $this;
+    }
+
+    /**
+     * Get ebook_id
+     *
+     * @return integer 
+     */
+    public function getEbookId()
+    {
+        return $this->ebook_id;
+    }
+
+    /**
+     * Set user_id
+     *
+     * @param integer $userId
+     * @return Users
+     */
+    public function setUserId($userId)
+    {
+        $this->user_id = $userId;
+
+        return $this;
+    }
+
+    /**
+     * Get user_id
+     *
+     * @return integer 
+     */
+    public function getUserId()
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * Set frequency
+     *
+     * @param string $frequency
+     * @return Users
+     */
+    public function setFrequency($frequency)
+    {
+        $this->frequency = $frequency;
+
+        return $this;
+    }
+
+    /**
+     * Get frequency
+     *
+     * @return string 
+     */
+    public function getFrequency()
+    {
+        return $this->frequency;
+    }
+
+    /**
+     * Set is_active
+     *
+     * @param integer $isActive
+     * @return Users
+     */
+    public function setIsActive($isActive)
+    {
+        $this->is_active = $isActive;
+
+        return $this;
+    }
+
+    /**
+     * Get is_active
+     *
+     * @return integer 
+     */
+    public function getIsActive()
+    {
+        return $this->is_active;
+    }
+
+    /**
+     * Get created_by
+     *
+     * @return integer 
+     */
+    public function getCreatedBy()
+    {
+        return $this->created_by;
+    }
+
+    /**
+     * Get date_created
+     *
+     * @return \DateTime 
+     */
+    public function getDateCreated()
+    {
+        return $this->date_created;
+    }
+
+    /**
+     * Get modified_by
+     *
+     * @return integer 
+     */
+    public function getModifiedBy()
+    {
+        return $this->modified_by;
+    }
+
+    /**
+     * Get date_modified
+     *
+     * @return \DateTime 
+     */
+    public function getDateModified()
+    {
+        return $this->date_modified;
+    }
+    /**
+     * @ORM\PreUpdate
+     */
+    public function onPreUpdate()
+    {
+        // Add your code here
+    }
+}

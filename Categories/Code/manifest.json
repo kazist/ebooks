@@ -1,0 +1,13 @@
+{
+    "name": "categories",
+    "title": "Categories List",
+    "explanation": "Categories List",
+    "description": "Categories List",
+    "version": 15,
+    "has_view": "1",
+    "tie_field": "0",
+    "email_on_new": "0",
+    "email_on_edit": "0",
+    "email_on_delete": "0",
+    "date_file_modified": "2016-12-10 09:10:23"
+}

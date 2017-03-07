@@ -1,0 +1,25 @@
+{# empty Twig template #}
+{% import "form.macro.twig" as forms %}
+
+{{ set_assets('applications/Ebook/Components/assets/css/ebook.css') }}
+
+{{ set_assets('applications/Ebook/Components/assets/js/ebook.js') }}
+
+<h1 class="component-header">{{ item.title }}</h1>
+
+<div class="ebook-posted-date">
+    <i class="fa fa-clock-o"></i> Posted:  {{ item.date_created|date('d M Y H:i') }} &nbsp;&nbsp;
+</div>
+
+<div>
+    {{ item.description|raw }} 
+</div>
+
+
+<div> 
+    <div class="clr"></div>
+    <br>
+    <br>
+    <div class="well well-sm">Category Ebooks</div>
+    {% include "category.ebook.twig" ignore missing with {'category_id': item.id}  %}
+</div> 

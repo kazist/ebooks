@@ -1,0 +1,273 @@
+<?php
+
+namespace Ebooks\Limits\Code\Tables;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Limits
+ *
+ * @ORM\Table(name="ebooks_limits", indexes={@ORM\Index(name="group_id_index", columns={"group_id"})})
+ * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
+ */
+class Limits extends \Kazist\Table\BaseTable {
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    protected $id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="group_id", type="integer", length=11, nullable=false)
+     */
+    protected $group_id;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="book_limit", type="integer", length=11, nullable=false)
+     */
+    protected $book_limit;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="frequency", type="string", length=255, nullable=false)
+     */
+    protected $frequency;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="published", type="integer", length=11, nullable=false)
+     */
+    protected $published;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="free_ebook", type="integer", length=11, nullable=false)
+     */
+    protected $free_ebook;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="book_per_interval", type="integer", length=11, nullable=false)
+     */
+    protected $book_per_interval;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="created_by", type="integer", length=11, nullable=false)
+     */
+    protected $created_by;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_created", type="datetime", nullable=false)
+     */
+    protected $date_created;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="modified_by", type="integer", length=11, nullable=false)
+     */
+    protected $modified_by;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_modified", type="datetime", nullable=false)
+     */
+    protected $date_modified;
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId() {
+        return $this->id;
+    }
+
+    /**
+     * Set group_id
+     *
+     * @param integer $groupId
+     * @return Limits
+     */
+    public function setGroupId($groupId) {
+        $this->group_id = $groupId;
+
+        return $this;
+    }
+
+    /**
+     * Get group_id
+     *
+     * @return integer 
+     */
+    public function getGroupId() {
+        return $this->group_id;
+    }
+
+    /**
+     * Set book_limit
+     *
+     * @param integer $bookLimit
+     * @return Limits
+     */
+    public function setBookLimit($bookLimit) {
+        $this->book_limit = $bookLimit;
+
+        return $this;
+    }
+
+    /**
+     * Get book_limit
+     *
+     * @return integer 
+     */
+    public function getBookLimit() {
+        return $this->book_limit;
+    }
+
+    /**
+     * Set frequency
+     *
+     * @param string $frequency
+     * @return Limits
+     */
+    public function setFrequency($frequency) {
+        $this->frequency = $frequency;
+
+        return $this;
+    }
+
+    /**
+     * Get frequency
+     *
+     * @return string 
+     */
+    public function getFrequency() {
+        return $this->frequency;
+    }
+
+    /**
+     * Set published
+     *
+     * @param integer $published
+     * @return Limits
+     */
+    public function setPublished($published) {
+        $this->published = $published;
+
+        return $this;
+    }
+
+    /**
+     * Get published
+     *
+     * @return integer 
+     */
+    public function getPublished() {
+        return $this->published;
+    }
+
+    /**
+     * Set free_ebook
+     *
+     * @param integer $freeEbook
+     * @return Limits
+     */
+    public function setFreeEbook($freeEbook) {
+        $this->free_ebook = $freeEbook;
+
+        return $this;
+    }
+
+    /**
+     * Get free_ebook
+     *
+     * @return integer 
+     */
+    public function getFreeEbook() {
+        return $this->free_ebook;
+    }
+
+    /**
+     * Set book_per_interval
+     *
+     * @param integer $bookPerInterval
+     * @return Limits
+     */
+    public function setBookPerInterval($bookPerInterval) {
+        $this->book_per_interval = $bookPerInterval;
+
+        return $this;
+    }
+
+    /**
+     * Get book_per_interval
+     *
+     * @return integer 
+     */
+    public function getBookPerInterval() {
+        return $this->book_per_interval;
+    }
+
+    /**
+     * Get created_by
+     *
+     * @return integer 
+     */
+    public function getCreatedBy() {
+        return $this->created_by;
+    }
+
+    /**
+     * Get date_created
+     *
+     * @return \DateTime 
+     */
+    public function getDateCreated() {
+        return $this->date_created;
+    }
+
+    /**
+     * Get modified_by
+     *
+     * @return integer 
+     */
+    public function getModifiedBy() {
+        return $this->modified_by;
+    }
+
+    /**
+     * Get date_modified
+     *
+     * @return \DateTime 
+     */
+    public function getDateModified() {
+        return $this->date_modified;
+    }
+
+    /**
+     * @ORM\PreUpdate
+     */
+    public function onPreUpdate() {
+        // Add your code here
+    }
+
+}

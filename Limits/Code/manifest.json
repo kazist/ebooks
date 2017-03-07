@@ -1,0 +1,13 @@
+{
+    "name": "limits",
+    "title": "Ebooks Limits",
+    "explanation": "Ebooks Limits",
+    "description": "Ebooks Limits",
+    "version": 29,
+    "has_view": "1",
+    "tie_field": "0",
+    "email_on_new": "0",
+    "email_on_edit": "0",
+    "email_on_delete": "0",
+    "date_file_modified": "2016-06-09 13:09:43"
+}

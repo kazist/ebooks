@@ -1,0 +1,82 @@
+
+{{ set_assets('applications/Ebooks/Addons/Freebook/assets/css/style.css') }}
+{{ set_assets('applications/Ebooks/Addons/Freebook/assets/js/script.js') }}
+
+<div class="span12">
+
+    <div id="freeCarousel" class="carousel slide">
+        <ol class="carousel-indicators">
+            {% if free_ebooks|length > 0 %}
+                {% set free_ebook_key = 0 %}
+                {% for key,item in free_ebooks %}
+
+                    {% if not (key+1)%4  %}
+                        <li data-target="#freeCarousel" data-slide-to="{{ free_ebook_key }}" {% if not key %}class="active"{% endif %}>
+                            {% set free_ebook_key = free_ebook_key + 1 %} 
+                        </li>
+                    {% elseif((key+1) == free_ebooks|length) %}
+                        <li data-target="#freeCarousel" data-slide-to="{{ free_ebook_key }}" {% if not key %}class="active"{% endif %}>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </ol>
+
+        <!-- Carousel items -->
+        <div class="component-ebooks">
+            <div class="carousel-inner">
+
+                <div class="item active">
+
+                    {% if free_ebooks|length > 0 %}
+                        {% for key,ebook in free_ebooks %}
+
+                            {% set div_row_begin = '<div class="item">' %}
+                            {% set div_row_end = '</div>' %}
+
+
+                            {% set download_url = generate_url('ebooks.ebooks.detail.download', {'id': ebook.id}) %}
+                            {% set ebook_url =  generate_url('ebooks.ebooks.detail', {'id': ebook.id}) %}
+                            {% set category_url =  generate_url('ebooks.categories.detail', {'id': ebook.category_id}) %}
+
+
+                            <div class="col-sm-3">
+
+                                <div class="component-ebook">
+
+                                    <h4>
+                                        <a href="{{ ebook_url }}" title= "{{ ebook.title }}">
+                                            {{ ebook.title }}
+                                        </a>
+                                    </h4>
+
+                                    <div class="covar"><center><img src="{{ resized_image(ebook.image_file, 100, null, 'fit') }}" alt=""></center></div>
+                                    <a class="btn btn-success btn-xs btn-flat" href="{{ download_url }}" title="Download {{ ebook.file_title }}">
+                                        <i class="fa fa-arrow-circle-o-down"></i>
+                                        Download
+                                    </a>
+                                    <a class="btn btn-primary btn-xs btn-flat" href="{{ ebook_url }}" title="View {{ ebook.file_title }}">
+                                        <i class="fa fa-edit"></i>
+                                        Preview
+                                    </a>
+                                </div>
+                            </div>
+
+                            {% if not (key+1)%4  and key != 0 %}
+                                {% if key+1 != free_ebooks|length   %}
+                                    {{ div_row_end|raw }}
+                                    {{ div_row_begin|raw }}
+                                {% endif %}
+                            {% endif %}
+
+                        {% endfor %}
+                    {% endif %}
+
+                </div><!--/item-->
+
+            </div><!--/carousel-inner-->
+        </div><!--/carousel-inner-->
+        <br>
+    </div><!--/myCarousel-->
+
+</div>
