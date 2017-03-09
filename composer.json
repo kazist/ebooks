@@ -1,0 +1,15 @@
+{
+    "name": "kazist/ebooks",
+    "description": "Kazist Ebooks Manager.",
+    "keywords": ["kazist", "ebook manager"],
+    "homepage": "https://github.com/kazist/ebooks",
+    "license": "LGPL-3.0",
+    "authors": [
+        {
+            "name": "Dedan Irungu",
+            "email": "info@emshyinnovate.com",
+            "homepage": "http://emshyinnovate.com",
+            "role": "Founder & Developer"
+        }
+    ]
+}
