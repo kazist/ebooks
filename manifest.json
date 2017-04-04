@@ -1,10 +1,10 @@
 
 {
-    "name": "ebooks",
+    "name": "kazist/ebooks",
     "title": "Ebooks",
     "icon": "ebooks\/ebooks\/icon.png",
     "extension": "component",
-    "path": "ebooks\/",
+    "path": "applications/Ebooks/",
     "description": "Ebooks List",
     "version": 1
 }
