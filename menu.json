@@ -2,17 +2,19 @@
     "title": "Ebooks",
     "description": "Ebooks Advertisement",
     "alias": "ebooks",
-    "icon": "fa-picture-o",
+    "icon": "fa fa-book",
     "home_link": "ebooks\/ebooks",
     "is_core": "1",
     "menulist": [{
             "title": "Ebooks",
             "alias": "admin_ebooks_ebooks",
             "url": "admin/ebooks/ebooks",
+            "icon": "fa fa-book",
             "children": [{
                     "title": "Freebooks",
                     "alias": "admin_ebooks_ebooks_freebooks",
                     "url": "admin/ebooks/ebooks/freebooks",
+                    "icon": "fa fa-address-book-o",
                     "children": []
                 }
             ]
@@ -20,11 +22,13 @@
             "title": "Categories",
             "alias": "admin_ebooks_categories",
             "url": "admin/ebooks/categories",
+            "icon": "fa fa-navicon",
             "children": []
         }, {
             "title": "Limits",
             "alias": "admin_ebooks_limits",
             "url": "admin/ebooks/limits",
+            "icon": "fa fa-hourglass-end",
             "children": []
         }]
 }
