@@ -4,6 +4,7 @@
     "alias": "ebooks",
     "icon": "fa fa-book",
     "home_link": "ebooks\/ebooks",
+    "path": "applications/Ebooks",
     "is_core": "1",
     "menulist": [{
             "title": "Ebooks",
