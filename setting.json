@@ -1,0 +1,23 @@
+{
+    "title": "Ebooks",
+    "alias": "ebooks",
+    "groups": [{
+            "title": "Ebooks Settings",
+            "settings": [{
+                    "name": "ebook_ebook_limit_per_month",
+                    "label": "Limit Per Month",
+                    "default": "10",
+                    "type": "text"
+                }, {
+                    "name": "ebook_ebook_limit_download",
+                    "label": "Download Limit",
+                    "default": "1",
+                    "type": "yesno"
+                }, {
+                    "name": "ebook_ebook_limit_table_view",
+                    "label": "Limit View",
+                    "default": "tabular",
+                    "type": "tabular"
+                }]
+        }]
+}
