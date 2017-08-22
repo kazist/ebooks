@@ -7,15 +7,18 @@
                     "name": "ebook_ebook_limit_per_month",
                     "label": "Limit Per Month",
                     "default": "10",
+                    "tooltip": "Set Limit Per Month",
                     "type": "text"
                 }, {
                     "name": "ebook_ebook_limit_download",
                     "label": "Download Limit",
+                    "tooltip": "Set Download Limit",
                     "default": "1",
                     "type": "yesno"
                 }, {
                     "name": "ebook_ebook_limit_table_view",
                     "label": "Limit View",
+                    "tooltip": "Set Limit View",
                     "default": "tabular",
                     "type": "tabular"
                 }]

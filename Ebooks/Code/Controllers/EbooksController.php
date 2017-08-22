@@ -84,12 +84,15 @@ class EbooksController extends BaseController {
 
         $this->model = new EbooksModel();
         $this->model->archiveEbooks();
+
+        return $this->json($data);
     }
 
     public function cronadduserebookAction() {
 
         $this->model = new EbooksModel();
         $this->model->addUserEbooks();
+        return $this->json($data);
     }
 
 }
