@@ -7,7 +7,7 @@
 <h1 class="component-header">{{ item.title }}</h1>
 
 <div class="ebook-posted-date">
-    <i class="fa fa-clock-o"></i> Posted:  {{ item.date_created|date('d M Y H:i') }} &nbsp;&nbsp;
+    <i class="fa fa-clock-o"></i> Posted:  {{ item.date_created|date('d M Y H:i',  document.timezone) }} &nbsp;&nbsp;
 </div>
 
 <div class="ebook-viewport">
